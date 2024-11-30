@@ -1,6 +1,6 @@
 # Todo List App with Supabase, React, and Vite
 
-This is a simple Todo List application built with **React**, **Supabase**, and **Vite**. It allows users to create, read, update, and delete their own tasks, stored securely in a Supabase database with Row-Level Security (RLS).
+This is a simple Todo List application built with **React**, **Supabase**, and **Vite**. It allows users to create, read, update, and delete their own tasks, stored securely in a Supabase database.
 
 Check out my YouTube channel for more tutorials: [@pedrotechnologies](https://www.youtube.com/@pedrotechnologies)
 
@@ -10,7 +10,6 @@ Check out my YouTube channel for more tutorials: [@pedrotechnologies](https://ww
 - Read (view) all todos created by the authenticated user
 - Update the name or completion status of a todo
 - Delete a todo item
-- User-specific data access using Row-Level Security (RLS)
 
 ## Technologies Used
 
@@ -27,18 +26,18 @@ Follow these steps to set up the project locally.
 
 Clone this repository to your local machine:
 
-```
+\```
 git clone https://github.com/yourusername/todo-app.git
 cd todo-app
-```
+\```
 
 ### 2. Install dependencies
 
 Install the required dependencies using npm:
 
-```
+\```
 npm install
-```
+\```
 
 ### 3. Set up Supabase
 
@@ -54,61 +53,26 @@ npm install
 
 In your project folder, create a new file named `src/supabaseClient.js` and paste the following configuration:
 
-```javascript
-import { createClient } from "@supabase/supabase-js";
+\```javascript
+import { createClient } from '@supabase/supabase-js';
 
 // Initialize Supabase client with your credentials
-const supabaseUrl = "https://your-project-id.supabase.co";
-const supabaseKey = "your-public-anon-key";
+const supabaseUrl = 'https://your-project-id.supabase.co';
+const supabaseKey = 'your-public-anon-key';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default supabase;
-```
+\```
 
 Replace `your-project-id` and `your-public-anon-key` with your actual Supabase credentials.
 
-### 5. Set up Row-Level Security (RLS)
-
-Run the following SQL commands in Supabase's SQL editor to enable RLS and create policies for your `todos` table:
-
-```sql
--- Enable RLS on the todos table
-ALTER TABLE todos ENABLE ROW LEVEL SECURITY;
-
--- Create policies for CRUD operations
-
--- SELECT policy (Allow users to read their todos)
-CREATE POLICY select_todos
-ON todos
-FOR SELECT
-USING (auth.uid() = user_id);
-
--- INSERT policy (Allow users to create their own todos)
-CREATE POLICY insert_todos
-ON todos
-FOR INSERT
-WITH CHECK (auth.uid() = user_id);
-
--- UPDATE policy (Allow users to update their own todos)
-CREATE POLICY update_todos
-ON todos
-FOR UPDATE
-USING (auth.uid() = user_id);
-
--- DELETE policy (Allow users to delete their own todos)
-CREATE POLICY delete_todos
-ON todos
-FOR DELETE
-USING (auth.uid() = user_id);
-```
-
-### 6. Run the Application
+### 5. Run the Application
 
 Start the development server with:
 
-```
+\```
 npm run dev
-```
+\```
 
 Visit `http://localhost:5173` in your browser to see the Todo List app in action.
 
