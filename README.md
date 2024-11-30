@@ -26,18 +26,18 @@ Follow these steps to set up the project locally.
 
 Clone this repository to your local machine:
 
-\```
+```
 git clone https://github.com/yourusername/todo-app.git
 cd todo-app
-\```
+```
 
 ### 2. Install dependencies
 
 Install the required dependencies using npm:
 
-\```
+```
 npm install
-\```
+```
 
 ### 3. Set up Supabase
 
@@ -53,16 +53,16 @@ npm install
 
 In your project folder, create a new file named `src/supabaseClient.js` and paste the following configuration:
 
-\```javascript
-import { createClient } from '@supabase/supabase-js';
+```javascript
+import { createClient } from "@supabase/supabase-js";
 
 // Initialize Supabase client with your credentials
-const supabaseUrl = 'https://your-project-id.supabase.co';
-const supabaseKey = 'your-public-anon-key';
+const supabaseUrl = "https://your-project-id.supabase.co";
+const supabaseKey = "your-public-anon-key";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default supabase;
-\```
+```
 
 Replace `your-project-id` and `your-public-anon-key` with your actual Supabase credentials.
 
@@ -70,9 +70,9 @@ Replace `your-project-id` and `your-public-anon-key` with your actual Supabase c
 
 Start the development server with:
 
-\```
+```
 npm run dev
-\```
+```
 
 Visit `http://localhost:5173` in your browser to see the Todo List app in action.
 
