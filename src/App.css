@@ -40,3 +40,178 @@
 .read-the-docs {
   color: #888;
 }
+
+body {
+  background: #18181b;
+  color: #e5e7eb;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  margin: 0;
+}
+
+.App {
+  max-width: 800px;
+  margin: 48px auto;
+  background: #232326;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.32);
+  padding: 40px 24px 32px 24px;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: #fbbf24;
+  margin-bottom: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+input[type="text"] {
+  flex: 1 1 160px;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #3b3b3f;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #2a2a2e;
+  color: #e5e7eb;
+  transition: border 0.2s;
+  outline: none;
+}
+input[type="text"]:focus {
+  border-color: #fbbf24;
+  background: #18181b;
+}
+
+button {
+  background: #fbbf24;
+  color: #232326;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(251,191,36,0.08);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+button:hover {
+  background: #f59e42;
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+}
+button[type="submit"] {
+  background-color: #f3f4f6;
+  color: #222;
+  border: 1px solid #d1d5db;
+  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+button[type="submit"]:hover {
+  background-color: #e0e7ef;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: #232326;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  padding: 18px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.04);
+}
+
+.task-content {
+  flex: 1;
+  word-break: break-word;
+  font-size: 1.08rem;
+  color: #e5e7eb;
+}
+.task-content strong {
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task-actions input[type="text"] {
+  width: 120px;
+  padding: 8px 10px;
+  font-size: 0.98rem;
+  border-radius: 6px;
+  border: 1px solid #3b3b3f;
+  background: #2a2a2e;
+  color: #e5e7eb;
+}
+.task-actions input[type="text"]:focus {
+  border-color: #fbbf24;
+  background: #18181b;
+}
+
+.task-actions button {
+  padding: 8px 14px;
+  font-size: 0.98rem;
+  border-radius: 6px;
+  font-weight: 500;
+  box-shadow: none;
+}
+.task-actions button:nth-child(2) {
+  background: #22c55e;
+  color: #fff;
+}
+.task-actions button:nth-child(2):hover {
+  background: #16a34a;
+}
+.task-actions button:nth-child(3) {
+  background: #ef4444;
+  color: #fff;
+}
+.task-actions button:nth-child(3):hover {
+  background: #dc2626;
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 18px 6px;
+  }
+  form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  li {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .task-actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
